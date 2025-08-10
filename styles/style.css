@@ -1,26 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Inter";
 }
 
 body{
-    background: #020024;
-    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    background-image: url('../media/Gradient.png');
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
     height: 100vh;
     align-items: center;
+    color: #fff;
 }
 
 #main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #fff;
-    width: 50rem;
+    width: 50%;
     height: 40rem;
     margin: 16px;
     padding: 16px;
     border-radius: 16px;
-    opacity: .7;
-    
+    background: linear-gradient(
+  135deg, 
+  rgba(255, 140, 0, 1) 0%,      /* Warm orange bottom-left */
+  rgba(33, 33, 33, 1) 40%,      /* Dark gray */
+  rgba(15, 15, 15, 1) 100%      /* Almost black */
+);
 
+    
+}
+#new-tasks{
+    width: fit-content;
+    
+}
+h2{
+    margin: 12px;
+    text-align: left;
+}
+h1{
+    text-align: center;
+    margin: 12px;
+    padding: 16px;
+}
+/* Add tasks */
+#add-tasks{
+    padding: 16px;
+    margin: 12px;
+    height: fit-content;
+}
+#tasks-text, input{
+    background-color: #e9e6e6;
+    color: black;
+    border-radius: 12px;
+    border: 0;
+    outline: 0;
+    padding: 10px;
+
+}
+#add-task-button, #filter-options{
+    background-color: #383433;
+    color: #ffffff;
+    border: 0;
+    border-radius: 12px;
+    padding: 10px;
+    width: 4rem;
+    cursor: pointer;
+    transition: .5s ease-out;
+}
+#add-task-button:hover{
+    opacity: .9;
+}
+#date-time{
+    display: flex;
+    gap: 16px;
+    margin-top: 12px;
+}
+
+/* Looking up stuff */
+#lookup{
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    width: fit-content;
+}
+#lookup h4{
+    margin: 12px;
+    text-align: left;
+}
+#search-task{
+    margin-left: 15px;
+    width: 13.5rem;
+}
+#filter-options{
+    margin-top: 0px;
+    width: 5.4rem;
 }
