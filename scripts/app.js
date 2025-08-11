@@ -1,10 +1,24 @@
 const addTaskButton = document.querySelector("#add-task-button");
 const showTasks = document.querySelector("#tasks");
 
+
+
+
+
+//Create the tasks list to put in show tasks
+const divTaskTodo = document.createElement('div');
+const completedTask = document.createElement('input');
+const taskName = document.createElement('p');
+const iconDiv = document.createElement('div');
+const editIcon = document.createElement("i")
+const deleteIcon = document.createElement("i")
+
 // Defining the object that defines the class
 var currentTasks =[];
 var taskId = 1;
 
+
+//Events
 addTaskButton.addEventListener('click', (e) =>{
     e.preventDefault();
 
@@ -15,20 +29,12 @@ addTaskButton.addEventListener('click', (e) =>{
     AddTask(text);
     
 })
+
 //Function to add new tasks
 function AddTask(text){
     // It initializes an object with the given tasks
-    currentTasks.push({id:taskId,name:text});
+    currentTasks.push({id:taskId,name:text,completed:false});
     taskId++; //update the id
-
-    //Create the wrapper class for the list
-    const divTaskTodo = document.createElement('div');
-    const completedTask = document.createElement('input');
-    const taskName = document.createElement('p');
-
-    const iconDiv = document.createElement('div');
-    const editIcon = document.createElement("i")
-    const deleteIcon = document.createElement("i")
 
     //Append to get the structure
     divTaskTodo.appendChild(completedTask);
@@ -53,3 +59,9 @@ function AddTask(text){
     showTasks.appendChild(divTaskTodo);
     showTasks.className = "";
 }
+
+//Function Delete Button
+
+//Function Edit Button
+
+//Function to search
