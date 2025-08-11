@@ -12,8 +12,6 @@ body{
     background-size: cover;
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    flex-wrap: wrap;
     height: 100vh;
     align-items: center;
     color: #fff;
@@ -25,37 +23,43 @@ body{
     align-items: center;
     background-color: #fff;
     width: 50%;
-    height: 40rem;
-    margin: 16px;
-    padding: 16px;
+    height: fit-content;
     border-radius: 16px;
-    background: linear-gradient(
-  135deg, 
-  rgba(255, 140, 0, 1) 0%,      /* Warm orange bottom-left */
-  rgba(33, 33, 33, 1) 40%,      /* Dark gray */
-  rgba(15, 15, 15, 1) 100%      /* Almost black */
-);
+    background: linear-gradient(135deg, rgba(255, 140, 0, 1) 0%,rgba(33, 33, 33, 1) 40%, #0f0f0f 100%);
 
     
 }
 #new-tasks{
-    width: fit-content;
-    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 12px;
+    gap: 16px;
 }
 h2{
     margin: 12px;
     text-align: left;
 }
 h1{
+    font-size: 500%;
     text-align: center;
     margin: 12px;
     padding: 16px;
+}
+.gradient-text{
+    background: linear-gradient(-90deg, rgba(255, 140, 0, 1) 0%,rgba(33, 33, 33, 1) 40%,rgba(15, 15, 15, 1) 100%);  
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 /* Add tasks */
 #add-tasks{
     padding: 16px;
     margin: 12px;
     height: fit-content;
+}
+#tasks-text{
+    width: 79.2%;
 }
 #tasks-text, input{
     background-color: #e9e6e6;
@@ -66,31 +70,30 @@ h1{
     padding: 10px;
 
 }
+#add-task-button{
+    flex-grow: 1;
+}
 #add-task-button, #filter-options{
     background-color: #383433;
     color: #ffffff;
     border: 0;
     border-radius: 12px;
     padding: 10px;
-    width: 4rem;
+    width: fit-content;
     cursor: pointer;
     transition: .5s ease-out;
 }
 #add-task-button:hover{
     opacity: .9;
 }
-#date-time{
-    display: flex;
-    gap: 16px;
-    margin-top: 12px;
-}
+
 
 /* Looking up stuff */
 #lookup{
     display: flex;
     justify-content: center;
     gap: 16px;
-    width: fit-content;
+    width: 50%;
 }
 #lookup h4{
     margin: 12px;
@@ -98,9 +101,54 @@ h1{
 }
 #search-task{
     margin-left: 15px;
-    width: 13.5rem;
+    width: 95%;
 }
 #filter-options{
     margin-top: 0px;
     width: 5.4rem;
+}
+/* Tasks */
+#tasks{
+    background: linear-gradient(-90deg, rgba(255, 140, 0, 1) 0%,rgba(33, 33, 33, 1) 40%,rgba(15, 15, 15, 1) 100%);  
+
+    width: 20rem;
+    margin: 2rem;
+    border-radius: 16px;
+    padding: 12px;
+}
+#task-todo{
+    background-color: #ffffff;
+    border: 1px solid #4444;
+    padding: 8px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    color: #000000;
+    
+}
+
+.fa-solid{
+    cursor: pointer;
+    padding: 5px;
+}
+.fa-trash:hover{
+    color: rgb(193, 18, 18);
+}
+
+
+/* MEDIA QUERIES */
+
+@media (max-width: 770px){
+    #tasks-text{
+        width: 100%;
+    }
+    #main{
+        width: 100%;
+    }
+}
+@media (max-width: 328px){
+    #tasks{
+        width: 80%;
+    }
 }
